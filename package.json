@@ -1,0 +1,46 @@
+{
+  "name": "maktab-almohamah",
+  "version": "1.0.0",
+  "description": "برنامج مكتب المحاماة - نسخة سطح مكتب",
+  "main": "main.js",
+  "author": "محمد عبدالحفيظ",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win --x64 --publish never"
+  },
+  "devDependencies": {
+    "electron": "^38.1.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.mohamedabdelhafiz.lawoffice",
+    "productName": "مكتب المحاماة",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "مكتب_المحاماة.html",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  }
+}
